@@ -12,14 +12,22 @@ get '/survey/new' do
 end
 
 post '/survey/new' do
-  @new_survey = Survey.create(title: params[:title])
-  @new_survey.questions << Question.create(survey_question: params[:questions])
+  @current_survey = Survey.create(title: params[:title])
+  # @new_survey.questions << Question.create(survey_question: params[:questions])
 
+  redirect "/survey/#{@current_survey.id}/questions"
 # Create new Survey in database.
 # Create new Questions in database.
 # Create new Choices in database.
 # Redirect to profile page.
 end
+
+get '/survey/:survey_id/questions' do
+  @current_survey = Survey.find_by_id(params[:survey_id])
+
+  erb :questions
+end
+
 
 get '/survey/:id' do
 # Take a specific survey.
