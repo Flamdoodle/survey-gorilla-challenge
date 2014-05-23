@@ -9,12 +9,12 @@ post '/login' do
 # Redirect to profile page.
 end
 
-post 'signup' do
+post '/signup' do
 # Create new user in database. Validate if exists.
 # Redirect to profile page.
 end
 
-get 'users/:id' do
+get '/users/:id' do
 ## Profile page shows User's Surveys
 ## and link to Survey create screen.
 end
