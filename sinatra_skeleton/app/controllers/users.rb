@@ -10,6 +10,10 @@ post '/login' do
 end
 
 post '/signup' do
+  user = User.new(username: params[:username])
+  user.password = params[:password]
+  user.save
+  redirect '/users/user.id'
 # Create new user in database. Validate if exists.
 # Redirect to profile page.
 end
