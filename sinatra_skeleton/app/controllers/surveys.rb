@@ -1,7 +1,7 @@
-get '/surveys/' do
+get '/surveys' do
 # List all Surveys.  Link to form to create new Survey.
   @all_surveys = Survey.all
-  erb :surveys
+  erb :all_surveys
 end
 
 get '/survey/new' do
@@ -30,11 +30,21 @@ end
 
 
 get '/survey/:id' do
-# Take a specific survey.
+  @survey = Survey.find(params[:id])
+  @questions = @survey.questions
+  erb :survey
 end
 
-post '/survey/:id/complete' do
-# Update database with Answers to Choices.
+post '/survey/:survey_id/submit' do
+  survey = Survey.find(params[:survey_id])
+  p params
+  choices = params[:choices]
+  choices.each_value do |v|
+    choice = Choice.find(v.to_i)
+    choice.tally += 1
+    choice.save
+  end
+  redirect '/'
 end
 
 get '/survey/:id/results' do
