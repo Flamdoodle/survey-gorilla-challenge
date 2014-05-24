@@ -1,30 +1,25 @@
 get '/surveys' do
-# List all Surveys.  Link to form to create new Survey.
   @all_surveys = Survey.all
   erb :all_surveys
 end
 
 get '/survey/new' do
-# Add title.
-# Add Questions to Survey.
-# Add Choices to Questions.
   erb :create_survey
 end
 
 post '/survey/new' do
   @current_survey = Survey.create(title: params[:title])
+  user = User.find(session[:user_id])
+  user.surveys << @current_survey
   redirect "/survey/#{@current_survey.id}/questions"
 end
 
 get '/survey/:survey_id/questions' do
   @current_survey = Survey.find_by_id(params[:survey_id])
-
   erb :question
 end
 
-
 post '/survey/:survey_id/questions/' do
-
   question = Question.create(survey_question: params[:question1])
   survey = Survey.find(params[:survey_id])
   survey.questions << question
@@ -34,16 +29,19 @@ post '/survey/:survey_id/questions/' do
       question.choices << choice
     end
   end
-
-
-
 end
 
-
-get '/survey/:id' do
-  @survey = Survey.find(params[:id])
+get '/survey/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
   @questions = @survey.questions
   erb :survey
+end
+
+get '/survey/:survey_id/finish' do
+  survey = Survey.find(params[:survey_id])
+  survey.completed = true
+  survey.save
+  redirect "/users/#{session[:user_id]}"
 end
 
 post '/survey/:survey_id/submit' do
