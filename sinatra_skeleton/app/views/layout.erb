@@ -38,8 +38,23 @@
         <p id='greeting'><span>Welcome!</span></p>
         <nav>
           <ul>
-            <li><a href="#">Log in</a></li>
-            <li><a href="#">Sign up</a></li>
+            <li><a id="login" href="#">Log in</a></li>
+            <div class='hiddiv' id='hidden_login'>
+              <form action="/login" method="post">
+                Username: <input type='text' name='username'><br>
+                Password: <input type='password' name='password'><br>
+                <input type='submit' value='Log in'>
+              </form>
+            </div>
+            <li><a id="signup" href="#">Sign up</a></li>
+            <div class='hiddiv' id='hidden_signup'>
+              <form action="/signup" method="post">
+                Username: <input type='text' name='username'><br>
+                Password: <input type='password' name='password'><br>
+                <input type='submit' value='Sign up'>
+              </form>
+            </div>
+
           </ul>
         </nav>
       <% end %>

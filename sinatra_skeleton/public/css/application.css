@@ -88,3 +88,13 @@ th {
 #greeting span {
   color: #FFAE00;
 }
+
+.hiddiv {
+  display: none;
+  padding-left: 5px;
+}
+
+.hiddiv input {
+  width: 85%;
+  padding-left: 5px;
+}
