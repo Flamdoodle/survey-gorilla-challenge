@@ -7,7 +7,7 @@
   </div>
   <button id="add_choice">add a choice</button><br>
   <input type="submit" value="next question">
-  <button id="finish">finish survey</button><br>
+  <a href="/survey/<%= @current_survey.id %>/finish">finish survey</a><br>
 </form>
 
 <span class="hidden" id="hidden_id"><%= @current_survey.id %></span>

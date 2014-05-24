@@ -16,14 +16,22 @@ $(document).ready(function() {
         var user_input = $(this).serialize();
         var hidden = $('#hidden_id').text();
 
-      $.ajax({
-          url: '/survey/'+hidden+'/questions/',
-          type: 'POST',
-          data: user_input
+        $.ajax({
+            url: '/survey/'+hidden+'/questions/',
+            type: 'POST',
+            data: user_input
       }).success(function(response){
           renderNewQuestionForm();
         })
     })
+
+    // $('#finish_survey').click(function(e) {
+    //     e.preventDefault;
+    //     var hidden = $('#hidden_id').text();
+    //     $.post('/survey/'+hidden+'/finish', "yay", function() {
+
+    //     });
+    // })
 });
 
 var renderNewQuestionForm = function() {

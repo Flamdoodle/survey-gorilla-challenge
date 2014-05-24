@@ -1,4 +1,5 @@
 get '/' do
+  # session.destroy
   if session[:user_id]
     redirect "/users/#{session[:user_id]}"
   else
