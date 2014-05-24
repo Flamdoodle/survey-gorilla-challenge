@@ -5,7 +5,7 @@ $(document).ready(function() {
         e.preventDefault();
         choice_counter += 1;
         console.log(choice_counter);
-        var html_code = "<br><span>choice: <input name='choice" + choice_counter + "'></input></span>"
+        var html_code = "<div>choice: <input name='choice" + choice_counter + "' type='text'></input></div>"
         $('#choices').append(html_code);
 
     }) //ending add choice button
@@ -25,17 +25,10 @@ $(document).ready(function() {
         })
     })
 
-    // $('#finish_survey').click(function(e) {
-    //     e.preventDefault;
-    //     var hidden = $('#hidden_id').text();
-    //     $.post('/survey/'+hidden+'/finish', "yay", function() {
-
-    //     });
-    // })
 });
 
 var renderNewQuestionForm = function() {
-    $('#choices span:nth-child(n+4)').remove();
+    $('#choices div:nth-child(n+3)').remove();
     clearFormElements()
 };
 
