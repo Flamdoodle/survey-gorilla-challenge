@@ -6,7 +6,7 @@ body {
 .main {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 20px 55px;
   border-left: 1px dotted #6D87D6;
   position: absolute;
   left: 200px;
@@ -14,6 +14,12 @@ body {
 th {
   text-align: left;
 }
+
+p span {
+  font-size: 1.4em;
+  background-color: #FFD373;
+}
+
 .error {
   color: red;
 }
@@ -23,13 +29,42 @@ h3 {
   color: #062170;
 }
 
-/*Affects all survey lists*/
-.survey-list {
+form .label {
+  background-color: #FFD373;
+  font-size: 1.3em;
+}
+
+.button {
+  background-color: #ccc;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  border: none;
+  margin-top: 7px;
+}
+
+#finish-survey-button {
+  margin-top: 35px;
+  font-size: 1em;
 
 }
 
+#finish-survey-button a {
+  padding: 5px 10px;
+  background-color: red;
+}
+
+
+
+#choices {
+  margin-bottom: 20px;
+}
+
+/*Affects all survey lists*/
 .survey-list ul {
   list-style: none;
+  padding-left: 10px;
 }
 
 .survey-list li {
@@ -128,11 +163,16 @@ h3 {
 #greeting {
   font-size: 1.7em;
   text-align: center;
+  background-color: #FFD373;
 }
 
 #greeting span {
-  color: #FFAE00;
+  font-size: 1em;
 }
+
+/*#greeting span {
+  color: #FFAE00;
+}*/
 
 .hiddiv {
   display: none;

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         e.preventDefault();
         choice_counter += 1;
-        var html_code = "<div>choice: <input name='choice" + choice_counter + "' type='text'></input></div>"
+        var html_code = "<div><span class='label'>choice</span>: <input name='choice" + choice_counter + "' type='text'></div>"
         $('#choices').append(html_code);
 
     }) //ending add choice button
@@ -38,7 +38,7 @@ $(document).ready(function() {
 });
 
 var renderNewQuestionForm = function() {
-    $('#choices div:nth-child(n+3)').remove();
+    $('#choices div:nth-child(n+4)').remove();
     clearFormElements()
 };
 

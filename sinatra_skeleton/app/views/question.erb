@@ -1,13 +1,15 @@
-<h2><%= @current_survey.title %></h2>
+<h3>Title: <%= @current_survey.title %></h3>
 
 <form id="question_form" action="" method="POST">
   <div id='choices'>
-    <div>question: <input type="text" name="question1"></div>
-    <div>choice: <input type="text" name="choice1"></div>
+    <div><span class='label'>question</span>: <input type="text" name="question1"></div><br>
+    <div><span class='label'>choice</span>: <input type="text" name="choice1"></div>
   </div>
-  <button id="add_choice">add a choice</button><br>
-  <input type="submit" value="next question">
-  <a href="/survey/<%= @current_survey.id %>/finish">finish survey</a><br>
+  <button class='button' id="add_choice">add a choice</button>
+  <input class='button' type="submit" value="next question"><br>
+  <div id='finish-survey-button'>
+    <a class='button'  href="/survey/<%= @current_survey.id %>/finish">Finish Survey</a>
+  </div><br>
 </form>
 
 <span class="hidden" id="hidden_id"><%= @current_survey.id %></span>
