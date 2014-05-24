@@ -38,6 +38,7 @@ get '/users/:id' do
 ## Profile page shows User's Surveys
 ## and link to Survey create screen.
   @user = User.find(params[:id])
+  @surveys = @user.surveys
   erb :profile
 end
 
