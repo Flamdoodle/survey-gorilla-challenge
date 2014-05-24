@@ -1,7 +1,10 @@
 require 'faker'
 
-2.times do
-  user = User.new(username: Faker::Internet.user_name)
+pei = User.new(username: "pei")
+ste = User.new(username: "ste")
+users = [pei, ste]
+
+users.each do |user|
   user.password = "yolo"
   user.save
 

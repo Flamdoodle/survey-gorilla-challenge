@@ -1,1 +1,8 @@
 <h3>Your Survey (<%= @user.username %>)</h3>
+
+<% @surveys.each do |survey| %>
+  <ul>
+    <li><%=survey.title%></li><a href="#">View</a><br>
+
+  </ul>
+<% end %>
