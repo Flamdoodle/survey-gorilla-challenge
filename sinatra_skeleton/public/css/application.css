@@ -1,16 +1,61 @@
 /*http://colorschemedesigner.com/#3O21Tw0w0w0w0*/
+body {
+  /*background-color: #ebf5ff;*/
+}
 
 .main {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border-left: 1px dotted #6D87D6;
+  position: absolute;
+  left: 200px;
 }
 th {
   text-align: left;
 }
 .error {
   color: red;
+}
+
+h3 {
+  font-size: 2em;
+  color: #062170;
+}
+
+/*Affects all survey lists*/
+.survey-list {
+
+}
+
+.survey-list ul {
+  list-style: none;
+}
+
+.survey-list li {
+  margin-bottom: 25px;
+}
+
+.survey-list li a {
+  text-decoration: none;
+  color: #ff8400;
+  font-size: 1.3em;
+  border-bottom: 2px dotted #FFD373;
+}
+
+.survey-list li a:hover {
+  border-bottom: 3px solid #FFD373;
+  /*text-decoration: underline;*/
+}
+
+.survey-list li a:visited {
+  color: #FFD373;
+}
+
+.survey-list li .author {
+  color: grey;
+  margin-left: 5px;
+  padding-top: 5px;
 }
 
 
