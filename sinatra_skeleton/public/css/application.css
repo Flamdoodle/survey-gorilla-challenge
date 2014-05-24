@@ -183,3 +183,13 @@ form .label {
   width: 85%;
   padding-left: 5px;
 }
+
+.survey_results ol li span {
+  font-size: 1.1em;
+  background-color: #FFD373;
+}
+
+.survey_results .tally {
+  background-color: white;
+  color: red;
+}
