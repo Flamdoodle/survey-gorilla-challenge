@@ -24,6 +24,17 @@ $(document).ready(function() {
         })
     })
 
+
+    $('#login').click(function(e) {
+        e.preventDefault;
+        $('#hidden_login').slideToggle("fast");
+    })
+
+    $('#signup').click(function(e) {
+        e.preventDefault;
+        $('#hidden_signup').slideToggle("fast");
+    })
+
 });
 
 var renderNewQuestionForm = function() {

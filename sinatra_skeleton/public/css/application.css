@@ -1,4 +1,6 @@
-.container {
+/*http://colorschemedesigner.com/#3O21Tw0w0w0w0*/
+
+.main {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
@@ -14,4 +16,85 @@ th {
 
 .hidden {
   display: none;
+}
+
+.sidebar {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: gray;
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 1.5em;
+
+}
+
+.sidebar nav ul li {
+/*  border-top: 1px solid black;
+  border-bottom: 1px solid black;*/
+  text-align: center;
+/*  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 1.5em;
+  background-color: blue;*/
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #FFD373;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#logo a {
+  text-decoration: none;
+  color: #805532;
+}
+
+#logo a span {
+  color: #FF0700;
+}
+
+#logo {
+  height: 100px;
+  position: relative;
+  top: 0;
+  padding-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#logo h1 {
+  font-size: 2.6em;
+  padding-top: 0;
+  margin-top: 10px;
+}
+
+#greeting {
+  font-size: 1.7em;
+  text-align: center;
+}
+
+#greeting span {
+  color: #FFAE00;
+}
+
+.hiddiv {
+  display: none;
+  padding-left: 5px;
+}
+
+.hiddiv input {
+  width: 85%;
+  padding-left: 5px;
 }

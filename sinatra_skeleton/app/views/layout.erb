@@ -19,11 +19,54 @@
 </head>
 <body>
   <div class="container">
-    <a href='/'><h1>Survey Baboon</h1></a>
-    <% if session[:user_id] %>
-      <a href='/logout'>Log out</a><span> (logged in as <%= User.find(session[:user_id]).username %>)</span>
-    <% end %>
-    <%= yield %>
+    <div class='sidebar'>
+      <div id='logo'>
+        <h1><a href='/'>Survey Bab<span>oo</span>n</a></h1>
+      </div>
+
+      <% if session[:user_id] %>
+        <p id='greeting'>Hello <span><%= User.find(session[:user_id]).username %></span>!</p>
+        <nav>
+          <ul>
+            <li><a href="#">Take Surveys</a></li>
+            <li><a href="#">Create Survey</a></li>
+            <li><a href="#">My Profile</a></li>
+            <li><a href='/logout'>Log out</a></li>
+          </ul>
+        </nav>
+      <% else %>
+        <p id='greeting'><span>Welcome!</span></p>
+        <nav>
+          <ul>
+            <li><a id="login" href="#">Log in</a></li>
+            <div class='hiddiv' id='hidden_login'>
+              <form action="/login" method="post">
+                Username: <input type='text' name='username'><br>
+                Password: <input type='password' name='password'><br>
+                <input type='submit' value='Log in'>
+              </form>
+            </div>
+            <li><a id="signup" href="#">Sign up</a></li>
+            <div class='hiddiv' id='hidden_signup'>
+              <form action="/signup" method="post">
+                Username: <input type='text' name='username'><br>
+                Password: <input type='password' name='password'><br>
+                <input type='submit' value='Sign up'>
+              </form>
+            </div>
+
+          </ul>
+        </nav>
+      <% end %>
+
+    </div>
+
+
+
+
+    <div class="main">
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>
