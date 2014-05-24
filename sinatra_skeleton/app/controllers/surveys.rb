@@ -1,5 +1,8 @@
 get '/surveys' do
   @all_surveys = Survey.all
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+  end
   erb :all_surveys
 end
 
