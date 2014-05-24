@@ -13,26 +13,18 @@ end
 
 post '/survey/new' do
   @current_survey = Survey.create(title: params[:title])
-  # @new_survey.questions << Question.create(survey_question: params[:questions])
-
   redirect "/survey/#{@current_survey.id}/questions"
-# Create new Survey in database.
-# Create new Questions in database.
-# Create new Choices in database.
-# Redirect to profile page.
 end
 
 get '/survey/:survey_id/questions' do
   @current_survey = Survey.find_by_id(params[:survey_id])
 
-  erb :questions
+  erb :question
 end
 
 
 post '/survey/:survey_id/questions/' do
 
-  # p params[:question1]
-  # p params[:choice1]
   question = Question.create(survey_question: params[:question1])
   survey = Survey.find(params[:survey_id])
   survey.questions << question
@@ -42,11 +34,6 @@ post '/survey/:survey_id/questions/' do
       question.choices << choice
     end
   end
-  # puts params[:choice]
-  # Question.create(survey_question: params[:question])
-  # puts params.shift
-  # # params.each do |choice|
-  #   Choice.create()
 
 
 
