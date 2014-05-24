@@ -29,6 +29,30 @@ get '/survey/:survey_id/questions' do
 end
 
 
+post '/survey/:survey_id/questions/' do
+
+  # p params[:question1]
+  # p params[:choice1]
+  question = Question.create(survey_question: params[:question1])
+  survey = Survey.find(params[:survey_id])
+  survey.questions << question
+  params.each do |k, v|
+    if k[0..5] == "choice"
+      choice = Choice.create(survey_choice: v)
+      question.choices << choice
+    end
+  end
+  # puts params[:choice]
+  # Question.create(survey_question: params[:question])
+  # puts params.shift
+  # # params.each do |choice|
+  #   Choice.create()
+
+
+
+end
+
+
 get '/survey/:id' do
 # Take a specific survey.
 end
