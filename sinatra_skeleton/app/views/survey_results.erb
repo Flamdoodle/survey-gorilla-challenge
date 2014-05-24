@@ -1,0 +1,13 @@
+<h3>Results for <i><%= @survey.title %></i> Survey</h3>
+
+<ol>
+  <% @questions.each do |question| %>
+    <li><%= question.survey_question %></li>
+    <ul>
+      <% question.choices.order('tally DESC').each do |choice| %>
+        <li><%= choice.survey_choice %>: <%= choice.tally %></li>
+      <% end %>
+    </ul><br>
+  <% end %>
+</ol>
+

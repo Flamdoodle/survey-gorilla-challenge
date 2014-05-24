@@ -1,5 +1,10 @@
-<h3>all surveys</h3>
+<h3>Surveys Available to Take!</h3>
 
 <% @all_surveys.each do |survey| %>
-  <a href="/survey/<%=survey.id%>"><%=survey.title%></a><br>
+
+
+  <% unless @user && @user.id == survey.user_id %>
+    <a href="/survey/<%=survey.id%>"><%=survey.title%></a> // <a href="#"><%= survey.user.username %></a><br>
+  <% end %>
+
 <% end %>
