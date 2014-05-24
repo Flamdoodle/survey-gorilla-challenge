@@ -1,17 +1,27 @@
+
+
 <div class="container">
 
   <h2><%= @current_survey.title %></h2>
 
 
 
-  <form action="" method="POST">
-    question: <input type="text" name="question1">
-    choice: <input type="choice" name="choice1">
-
+  <form id="question_form" action="" method="POST">
+    <div id='choices'>
+      question: <input type="text" name="question1"><br>
+      choice: <input type="choice" name="choice1">
+    </div>
+    <button id="add_choice">add a choice</button><br>
+    <input type="submit" value="next question">
+    <button id="finish">finish survey</button><br>
   </form>
 
-  <button id="add_choice" value="add choice"></button>
-  <button id="submit_survey" value="done"></button>
+  <h1 class="hidden" id="hidden_id"><%= @current_survey.id %></h1>
+
+
+
+
+
 
 
 </div>
