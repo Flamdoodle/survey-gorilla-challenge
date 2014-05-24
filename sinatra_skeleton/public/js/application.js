@@ -4,7 +4,6 @@ $(document).ready(function() {
 
         e.preventDefault();
         choice_counter += 1;
-        console.log(choice_counter);
         var html_code = "<div>choice: <input name='choice" + choice_counter + "' type='text'></input></div>"
         $('#choices').append(html_code);
 

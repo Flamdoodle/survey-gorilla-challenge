@@ -56,6 +56,8 @@ post '/survey/:survey_id/submit' do
   redirect '/'
 end
 
-get '/survey/:id/results' do
-# View results of Survey with id.
+get '/survey/:survey_id/results' do
+  @survey = Survey.find(params[:survey_id])
+  @questions = @survey.questions
+  erb :survey_results
 end

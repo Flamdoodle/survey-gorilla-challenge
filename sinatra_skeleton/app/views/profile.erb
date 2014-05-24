@@ -5,6 +5,6 @@
 
 <% @surveys.each do |survey| %>
   <ul>
-    <li><%=survey.title%></li><a href="#">View</a><br>
+    <li><%=survey.title%></li><a href="/survey/<%= survey.id %>/results">View</a><br>
   </ul>
 <% end %>
