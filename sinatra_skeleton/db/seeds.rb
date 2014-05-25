@@ -27,7 +27,7 @@ end
 
 users.each do |user|
   2.times do
-    survey = Survey.create(title: Faker::Lorem.sentence, completed: false)
+    survey = Survey.create(title: Faker::Lorem.sentence, completed: true)
     user.surveys << survey
 
     5.times do
