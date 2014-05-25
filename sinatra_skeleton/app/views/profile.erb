@@ -1,11 +1,9 @@
-<br>
-<a href="/survey/new">Create New Survey</a><br>
-<a href="/surveys">View all Surveys</a>
-
-<h3>Your Survey (<%= @user.username %>)</h3>
-
-<% @surveys.each do |survey| %>
+<h3>My Surveys</h3>
+<p><span>Click on a survey to view its results!</span></p><br>
+<div class="survey-list">
   <ul>
-    <li><%=survey.title%></li><a href="/survey/<%= survey.id %>/results">View</a><br>
+    <% @surveys.each do |survey| %>
+      <li><a href="/survey/<%= survey.id %>/results"><%=survey.title%></a></li>
+    <% end %>
   </ul>
-<% end %>
+</div>

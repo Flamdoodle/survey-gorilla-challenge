@@ -1,16 +1,96 @@
 /*http://colorschemedesigner.com/#3O21Tw0w0w0w0*/
+body {
+  /*background-color: #ebf5ff;*/
+}
 
 .main {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  padding: 0px 20px 20px 55px;
+  border-left: 1px dotted #6D87D6;
+  position: absolute;
+  left: 200px;
 }
 th {
   text-align: left;
 }
+
+p span {
+  font-size: 1.4em;
+  background-color: #FFD373;
+}
+
 .error {
   color: red;
+}
+
+h3 {
+  font-size: 2em;
+  color: #062170;
+}
+
+form .label {
+  background-color: #FFD373;
+  font-size: 1.3em;
+}
+
+.button {
+  background-color: #ccc;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  border: none;
+  margin-top: 7px;
+}
+
+#finish-survey-button {
+  margin-top: 35px;
+  font-size: 1em;
+
+}
+
+#finish-survey-button a {
+  padding: 5px 10px;
+  background-color: red;
+}
+
+
+
+#choices {
+  margin-bottom: 20px;
+}
+
+/*Affects all survey lists*/
+.survey-list ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.survey-list li {
+  margin-bottom: 25px;
+}
+
+.survey-list li a {
+  text-decoration: none;
+  color: #ff8400;
+  font-size: 1.3em;
+  border-bottom: 2px dotted #FFD373;
+}
+
+.survey-list li a:hover {
+  border-bottom: 3px solid #FFD373;
+  /*text-decoration: underline;*/
+}
+
+.survey-list li a:visited {
+  color: #FFD373;
+}
+
+.survey-list li .author {
+  color: grey;
+  margin-left: 5px;
+  padding-top: 5px;
 }
 
 
@@ -83,11 +163,16 @@ th {
 #greeting {
   font-size: 1.7em;
   text-align: center;
+  background-color: #FFD373;
 }
 
 #greeting span {
-  color: #FFAE00;
+  font-size: 1em;
 }
+
+/*#greeting span {
+  color: #FFAE00;
+}*/
 
 .hiddiv {
   display: none;
@@ -97,4 +182,14 @@ th {
 .hiddiv input {
   width: 85%;
   padding-left: 5px;
+}
+
+.survey_results ol li span {
+  font-size: 1.1em;
+  background-color: #FFD373;
+}
+
+.survey_results .tally {
+  background-color: white;
+  color: red;
 }

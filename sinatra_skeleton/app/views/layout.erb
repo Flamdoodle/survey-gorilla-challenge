@@ -28,9 +28,9 @@
         <p id='greeting'>Hello <span><%= User.find(session[:user_id]).username %></span>!</p>
         <nav>
           <ul>
-            <li><a href="#">Take Surveys</a></li>
-            <li><a href="#">Create Survey</a></li>
-            <li><a href="#">My Profile</a></li>
+            <li><a href="/surveys">Take Surveys</a></li>
+            <li><a href="/survey/new">Create Survey</a></li>
+            <li><a href="/users/<%= session[:user_id] %>">My Profile</a></li>
             <li><a href='/logout'>Log out</a></li>
           </ul>
         </nav>
