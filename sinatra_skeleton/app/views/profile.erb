@@ -2,8 +2,18 @@
 <p><span>Click on a survey to view its results!</span></p><br>
 <div class="survey-list">
   <ul>
-    <% @surveys.each do |survey| %>
+    <% @completed_surveys.each do |survey| %>
       <li><a href="/survey/<%= survey.id %>/results"><%=survey.title%></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<h3>Incomplete Surveys</h3>
+<p><span>Works in progress...</span></p>
+<div class="survey-list">
+  <ul>
+    <% @incomplete_surveys.each do |survey| %>
+      <li><a href="/survey/<%= survey.id %>/incomplete"><%=survey.title%></a></li>
     <% end %>
   </ul>
 </div>

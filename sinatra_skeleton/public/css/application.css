@@ -44,15 +44,18 @@ form .label {
   margin-top: 7px;
 }
 
-#finish-survey-button {
+.link-button {
   margin-top: 35px;
   font-size: 1em;
-
 }
 
-#finish-survey-button a {
+.link-button a {
   padding: 5px 10px;
-  background-color: red;
+  background-color: green;
+}
+
+#finish-survey-button {
+  background-color: red; 
 }
 
 

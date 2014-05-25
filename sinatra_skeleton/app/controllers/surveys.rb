@@ -40,6 +40,12 @@ get '/survey/:survey_id' do
   erb :survey
 end
 
+get '/survey/:survey_id/incomplete' do
+  @survey = Survey.find(params[:survey_id])
+  @questions = @survey.questions
+  erb :incomplete_survey
+end
+
 get '/survey/:survey_id/finish' do
   survey = Survey.find(params[:survey_id])
   survey.completed = true
@@ -49,7 +55,6 @@ end
 
 post '/survey/:survey_id/submit' do
   survey = Survey.find(params[:survey_id])
-  p params
   choices = params[:choices]
   choices.each_value do |v|
     choice = Choice.find(v.to_i)

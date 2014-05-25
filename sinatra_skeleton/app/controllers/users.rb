@@ -32,7 +32,8 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
-  @surveys = @user.surveys
+  @completed_surveys = @user.surveys.where(completed: true)
+  @incomplete_surveys = @user.surveys.where(completed: false)
   erb :profile
 end
 
@@ -40,3 +41,4 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
