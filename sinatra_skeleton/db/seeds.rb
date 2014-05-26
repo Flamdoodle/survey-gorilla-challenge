@@ -1,8 +1,10 @@
 require 'faker'
 
 pei = User.new(username: "pei")
-ste = User.new(username: "ste")
-users = [pei, ste]
+ste = User.new(username: "stephen")
+bev = User.new(username: "beverly")
+ryan = User.new(username: "ryan")
+users = [pei, ste, bev, ryan]
 
 users.each do |user|
   user.password = "yolo"
