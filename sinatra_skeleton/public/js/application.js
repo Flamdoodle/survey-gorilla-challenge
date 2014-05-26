@@ -4,7 +4,8 @@ $(document).ready(function() {
 
         e.preventDefault();
         choice_counter += 1;
-        var html_code = "<div><span class='label'>choice</span>: <input name='choice" + choice_counter + "' type='text'></div>"
+        var html_code = "<div><span class='label'>choice</span>: <input name='choice" 
+                        + choice_counter + "' type='text'></div>"
         $('#choices').append(html_code);
 
     }) //ending add choice button
