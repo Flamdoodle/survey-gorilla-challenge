@@ -22,6 +22,12 @@ get '/survey/:survey_id/questions' do
   erb :question
 end
 
+
+
+
+
+
+
 post '/survey/:survey_id/questions/' do
   question = Question.create(survey_question: params[:question1])
   survey = Survey.find(params[:survey_id])
@@ -33,6 +39,14 @@ post '/survey/:survey_id/questions/' do
     end
   end
 end
+
+
+
+
+
+
+
+
 
 get '/survey/:survey_id' do
   @survey = Survey.find(params[:survey_id])
