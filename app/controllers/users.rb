@@ -9,7 +9,7 @@ end
 
 post '/login' do
   @username = params[:username]
-  user = User.authenticate(@username, params[:password])
+  user = User.find_by_username(@username).authenticate(params[:password])
   if user
     session[:user_id] = user.id
     redirect "/users/#{user.id}"
@@ -22,6 +22,7 @@ end
 post '/signup' do
   user = User.new(username: params[:username])
   user.password = params[:password]
+  user.password_confirmation = params[:confirmed_password]
   if user.save
     session[:user_id] = user.id
     redirect "/users/#{user.id}"
